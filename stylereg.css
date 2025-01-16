@@ -1,55 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@media (max-width: 768px) {
-  /* Aquí puedes agregar tus estilos para pantallas pequeñas */
-  body {
-    padding: 10px;
-    justify-content: center;
-  }
-
-  h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Aquí puedes agregar tus estilos para pantallas muy pequeñas */
-  body {
-    padding: 5px;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-}
-
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-    background-color: #2a1f14; /* Color de fondo oscuro */
-    display: flex; /* Utiliza flexbox para centrar contenido */
-    flex-direction: column; /* Alinea los elementos en columna */
-    align-items: center;
-    justify-content: relative; /* Alinea el contenido hacia arriba */
-    font-family: "Poppins", sans-serif; /* Aplica la fuente Poppins */
-    height: 100vh; /* Asegura que ocupe al menos el 100% de la altura de la ventana */
-    margin: 0; /* Elimina márgenes predeterminados */
-  
-  }
+  background-color: #2a1f14;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
 
 h1, p {
-  margin: 0;
   text-shadow: 0 0 10px rgba(92, 11, 5, 0.5);
 }
 
@@ -73,11 +40,11 @@ p {
 }
 
 a {
-  color: #0e2a02; /*color de olvidaste la contraseña*/
+  color: #0e2a02;
   font-size: 14px;
   text-decoration: none;
   margin: 15px 0;
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -108,8 +75,7 @@ button {
   margin: 20px;
   padding: 12px 80px;
   letter-spacing: 1px;
-  text-transform: capitalize;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease;
   cursor: pointer;
 }
 
@@ -119,29 +85,6 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
-}
-
-button:focus {
-  outline: none;
-}
-
-button.ghost {
-  background-color: rgba(147, 31, 31, 0.2);
-  border: 2px solid #fff;
-}
-
-button.ghost i {
-  opacity: 1;
-  transition: 0.3s ease-in-out;
-  z-index: 6;
-}
-
-button.ghost i.register {
-  right: 70px;
-}
-
-button.ghost i.login {
-  left: 70px;
 }
 
 form {
@@ -166,47 +109,21 @@ input {
 }
 
 .container {
-    border-radius: 25px;
-    box-shadow: 0 14px 28px rgba(60, 6, 6, 0.25), 0 0 10px rgba(205, 108, 5, 0.22);
-    position: relative;
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 500px;
-  }
+  border-radius: 25px;
+  box-shadow: 0 14px 28px rgba(60, 6, 6, 0.25), 0 0 10px rgba(205, 108, 5, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  max-width: 768px;
+  min-height: 500px;
+  margin: 20px auto;
+}
 
 .form-container {
   position: absolute;
-  top: 0;
+  width: 100%;
   height: 100%;
   transition: all 0.6s ease-in-out;
-}
-
-.form-control, .form-control2 {
-  width: 100%;
-  position: relative;
-}
-
-.form-control2 span, .form-control span {
-  position: absolute;
-  border-bottom: 3px solid #67a2c9;
-  left: 0;
-  bottom: 8px;
-  width: 0%;
-  transition: all 0.3s ease;
-}
-
-.form-control2 input:focus ~ span, .form-control input:focus ~ span {
-  width: 100%;
-}
-
-.form-control small, .form-control2 small {
-  color: red;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  font-size: 12px;
-  z-index: 100;
 }
 
 .login-container, .register-container {
@@ -224,7 +141,7 @@ input {
 
 .register-container {
   left: 0;
-  opacity: 0;
+  opacity: 1; 
   z-index: 1;
 }
 
@@ -238,12 +155,9 @@ input {
 @keyframes show {
   0%, 49.99% {
     opacity: 0;
-    z-index: 1;
   }
-
   50%, 100% {
     opacity: 1;
-    z-index: 5;
   }
 }
 
@@ -263,18 +177,18 @@ input {
 }
 
 .overlay {
-    background-image: url(./DejaVu.png);
-    background-repeat: no-repeat;  /* Evita que la imagen se repita */
-    background-size: contain;     /* Ajusta la imagen para que se ajuste al contenedor sin distorsionar */
-    background-position: center;  /* Centra la imagen dentro del contenedor */
-    color: #fff;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transition: transform 0.6s ease-in-out;
-  }
-  
+  background-image: url('DejaVu.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transition: transform 0.6s ease;
+}
+
 .overlay::before {
   content: "";
   position: absolute;
@@ -301,7 +215,7 @@ input {
   height: 100%;
   width: 50%;
   transform: translateX(0);
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease;
 }
 
 .overlay-left {
@@ -334,52 +248,125 @@ input {
   margin: 0 5px;
   height: 40px;
   width: 40px;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease;
 }
 
-/*Cambio de color al pasar puntero en redes sociales*/
 .social-container a:hover {
   border: 1px solid #ec8911;
 }
 
-/* Encabezado */
 header {
-    text-align: center;
-    padding: 20px;
-    color: #f9f9f9;
-    position: relative;
+  text-align: center;
+  padding: 20px;
+  color: #f9f9f9;
+  position: relative;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+  margin: 0;
+  font-size: 2.5rem;
 }
-/* Estilo del icono de WhatsApp */
+
 .whatsapp-chat {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    text-align: center;
-    z-index: 1000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  z-index: 1000;
+  background-color: #e8d0df;
+  border-radius: 50px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(162, 72, 72, 0.1);
 }
 
 .whatsapp-chat span {
-    display: block;
-    font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 5px;
+  display: block;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 body.dark-mode .whatsapp-chat span {
-    color: #f9f9f9;
+  color: #f9f9f9;
 }
 
 .whatsapp-chat a {
-    text-decoration: none;
-    color: #25d366;
-    font-size: 2.5rem;
+  text-decoration: none;
+  color: #25d366;
+  font-size: 2.5rem;
 }
 
-.whatsapp-chat a:hover {
-    color: #128c7e;
+whatsapp-chat a:hover {
+  color: #128c7e;
 }
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.navbar ul li a:hover {
+  background-color: #575757;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .login-container, .register-container {
+    width: 100%;
+    left: 0;
+  }
+
+  .overlay-container, .overlay {
+    width: 100%;
+  }
+
+  .login-container, .register-container, .overlay-panel {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
